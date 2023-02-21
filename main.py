@@ -6,7 +6,7 @@ import tkinter.simpledialog as simpledialog
 class Pititato:
     def __init__(self):
         self.window = tk.Tk()
-        self.window.title("Tic Tac Toe")
+        self.window.title("Pi Tic Tac Toe")
         self.window.geometry("800x480")
         self.window.attributes('-fullscreen', True)
         self.turn = "X"
@@ -111,7 +111,7 @@ class Pititato:
         return " " not in self.board
 
     def handle_tie(self):
-        if tk.messagebox.askyesno("Tie!", "It's a tie! Do you want to play again?"):
+        if tk.messagebox.askyesno("It's a tie!", "Do you want to play again?"):
             self.reset_board()
         else:
             self.window.destroy()
