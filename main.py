@@ -92,8 +92,6 @@ class Pititato:
             return True
         return False
 
-    import tkinter.simpledialog as simpledialog
-
     def handle_winner(self):
         winner_name = simpledialog.askstring("Congratulations!", "Enter your name:")
         if winner_name:
