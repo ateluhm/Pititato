@@ -33,8 +33,8 @@ class Pititato:
 
     def create_scoreboard(self):
         self.score_frame = tk.Frame(self.window, width=320, height=480)
-        self.score_frame.place(x=480, y=0)
-        self.score_label = tk.Label(self.score_frame, text="Top Players", font=("Arial", 18))
+        self.score_frame.place(x=520, y=40)
+        self.score_label = tk.Label(self.score_frame, text="Top Players", font=("Arial", 15))
         self.score_label.pack(pady=10)
         self.score_list = tk.Listbox(self.score_frame, font=("Arial", 14))
         self.score_list.pack(padx=10, pady=10, fill="both", expand=True)
@@ -47,12 +47,12 @@ class Pititato:
 
     def create_board(self):
         self.board_frame = tk.Frame(self.window, width=480, height=480)
-        self.board_frame.place(x=0, y=0)
+        self.board_frame.place(x=40, y=80)
         for i in range(3):
             for j in range(3):
-                button = tk.Button(self.board_frame, text=" ", font=("Arial", 50), width=3, height=1, command=lambda i=i, j=j: self.play_turn(i, j))
+                button = tk.Button(self.board_frame, text=" ", font=("Arial", 50), bg="#ffffff", width=3, height=1, command=lambda i=i, j=j: self.play_turn(i, j))
                 button.grid(row=i, column=j)
-        self.turn_label = tk.Label(self.board_frame, text="You can place your " + self.turn, font=("Arial", 10))
+        self.turn_label = tk.Label(self.board_frame, text="You can place your " + self.turn, font=("Arial", 15))
         self.turn_label.grid(row=3, columnspan=3, pady=10)
 
     def play_turn(self, row, col):
